@@ -31,7 +31,7 @@
         <div class="form-group">
             <label>对应项目地址: </label>
             <input type="text" name="dirPath" class="form-control" required id="port" aria-describedby="emailHelp">
-            <small id="fileHelp" class="form-text text-muted">项目绝对路径(正常到public即可)</i></small>
+            <small id="fileHelp" class="form-text text-muted">项目绝对路径(例:/www/wwwroot/thinkphp/public)</i></small>
         </div>
         <div class="form-group">
             <label for="inputState">框架: </label>
