@@ -1,7 +1,7 @@
 ## gii-nginx
 
 - 自动生成nginx本地配置文件(可视化)
-  ![](../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/30f8f307d49b6b2f849ba9e9fbf78303/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/Image/1421646100621_.pic.jpg)
+  ![](./1421646100621_.pic.jpg)
 
 #### 1.准备工作
 
