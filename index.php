@@ -24,13 +24,14 @@
         </div>
         <div class="form-group">
             <label>端口: </label>
-            <input type="number" name="port" value="80" class="form-control" required id="port" aria-describedby="emailHelp">
+            <input type="number" name="port" value="80" class="form-control" required id="port"
+                   aria-describedby="emailHelp">
             <small id="portHelp" class="form-text text-muted">本地端口默认: 80</small>
         </div>
         <div class="form-group">
             <label>对应项目地址: </label>
             <input type="text" name="dirPath" class="form-control" required id="port" aria-describedby="emailHelp">
-            <small id="fileHelp" class="form-text text-muted">项目地址</i></small>
+            <small id="fileHelp" class="form-text text-muted">项目绝对路径</i></small>
         </div>
         <div class="form-group">
             <label for="inputState">框架: </label>
@@ -40,7 +41,8 @@
                 <option value="2">ThinkPHP</option>
                 <option value="3">Yii</option>
             </select>
-            <small id="fileHelp" class="form-text text-muted">用于配置伪静态(默认:try_files $uri $uri/ /index.php$is_args$query_string)</i></small>
+            <small id="fileHelp" class="form-text text-muted">用于配置伪静态(默认:try_files $uri $uri/
+                /index.php$is_args$query_string)</i></small>
         </div>
         <button type="submit" class="btn btn-primary">创建</button>
     </form>
