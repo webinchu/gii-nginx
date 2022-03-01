@@ -13,5 +13,5 @@
 #### 2.配置
     - 修改gii.php的$ectHost变量,本机host文件绝对路径(注意需要打开文件的可读写权限,没有权限需要手动加入)
     - 修改gii.php的$nginxHostPath变量,改成你自己的NGINX vhosts存放目录的绝对路径
-    - 新增成功编辑本地host文件将新增的域名加上映射
+    - 新增成功编辑本地host文件将新增的域名加上映射(hosts文件没有读写权限的时候手动)
     - 重启一下nginx(手动nginx -s reload)
