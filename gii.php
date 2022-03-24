@@ -20,7 +20,7 @@ switch ($_POST['tryFile']) {
         header("Location:.?status=0");exit();
     }
     $domain = $_POST['domain'];
-    //不覆盖已存在的
+//不覆盖已存在的
 //    if (is_file($hostPath."/".$domain)){
 //        header("Location:.?status=2");exit();
 //    }
@@ -40,6 +40,8 @@ if (is_file($nginxHostPath . "/" . $domain)) {
     $status = 1;
     try {
         file_put_contents($ectHost, "127.0.0.1 $domain\n", FILE_APPEND);
+        $hostLog = $port == 80 ? $domain : ($domain . ':' . $port);
+        file_put_contents('./host.log', $hostLog . ",", FILE_APPEND);
     } catch (\Throwable $e) {
     }
     //重启nginx

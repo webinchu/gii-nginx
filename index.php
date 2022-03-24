@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css"  crossorigin="anonymous">
+    <title>nginx-host</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
 <br>
@@ -46,16 +46,35 @@
         </div>
         <button type="submit" class="btn btn-primary">创建</button>
     </form>
+    <br>
+    <div>
+        <small id="fileHelp">历史:</small>
+        <nav class="nav">
+            <?php
+            $log = file_get_contents('./host.log');
+            $logs = explode(',', $log);
+            if (empty($logs) || (isset($logs[0]) && !$logs[0])) {
+                echo "<a class='nav-link' href='http://" . $_SERVER['SERVER_NAME'] . "'>" . $_SERVER['SERVER_NAME'] . "</a>";
+            }
+            foreach ($logs as $item) {
+                if ($item) {
+                    echo "<a class='nav-link' href='http://$item' target='_blank'>$item</a> ";
+                }
+            }
+            ?>
+
+        </nav>
+    </div>
 </div>
 <script>
     var status = <?php echo $_GET['status'] ?: 0 ?>;
     if (status == 1) {
         alert("域名新增成功")
-    } else if (status == 2){
+    } else if (status == 2) {
         alert("域名已存在")
-    }else if (status == 3){
+    } else if (status == 3) {
         alert("项目地址不存在")
-    }else{
+    } else {
         alert("域名新增失败")
     }
 </script>
