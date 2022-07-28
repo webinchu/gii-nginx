@@ -11,7 +11,7 @@ server {
     }
     error_log /opt/homebrew/etc/nginx/logs/$domain.log;
     location ~ \.php(.*)$ {
-      fastcgi_pass  127.0.0.1:9000;
+      fastcgi_pass  127.0.0.1:9000 ;
       fastcgi_index index.php;
       fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
       fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;

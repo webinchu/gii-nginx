@@ -47,5 +47,6 @@ if (is_file($nginxHostPath . "/" . $domain)) {
     //重启nginx
     shell_exec("nginx -s reload");
 }
-    header("Location:./?status=$status");exit();
+header("Location:./?status=$status");
+exit();
 
