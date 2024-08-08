@@ -67,14 +67,14 @@
     </div>
 </div>
 <script>
-    var status = <?php echo $_GET['status'] ?: 0 ?>;
+    var status = <?php echo isset($_GET['status']) ? ($_GET['status'] ?: 0) : 0; ?>;
     if (status == 1) {
         alert("域名新增成功")
     } else if (status == 2) {
         alert("域名已存在")
     } else if (status == 3) {
         alert("项目地址不存在")
-    } else {
+    } else if (status == -1) {
         alert("域名新增失败")
     }
 </script>

@@ -17,7 +17,7 @@ switch ($_POST['tryFile']) {
             break;
     }
     if (empty($_POST['domain']) || empty($_POST['dirPath'])) {
-        header("Location:.?status=0");exit();
+        header("Location:.?status=-1");exit();
     }
     $domain = $_POST['domain'];
 //不覆盖已存在的
@@ -35,7 +35,7 @@ file_put_contents($domain, $tpl);
 $shellCommand = "mv ./" . $domain . "  " . $nginxHostPath;
     //用终端命令移动文件至对应文件夹
     shell_exec($shellCommand);
-    $status = 0;
+    $status = -1;
 if (is_file($nginxHostPath . "/" . $domain)) {
     $status = 1;
     try {
